@@ -1,6 +1,6 @@
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import "../navBar/navBar.css";
+import CartWidget from "../../common/cart/cartWidget";
 
 const NavBar = () => {
 	return (
@@ -27,9 +27,7 @@ const NavBar = () => {
 							<SearchIcon></SearchIcon>
 						</a>
 					</div>
-					<a href="" className="cart">
-						<ShoppingCartIcon></ShoppingCartIcon>
-					</a>
+					<CartWidget></CartWidget>
 				</div>
 			</div>
 		</div>

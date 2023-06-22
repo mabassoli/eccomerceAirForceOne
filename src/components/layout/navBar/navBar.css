@@ -77,4 +77,12 @@
 
 .cart {
 	color: #8a8b8c;
+	text-decoration: none;
+}
+
+.cart span {
+	color: #8a8b8c;
+	position: relative;
+	top: -15px;
+	font-weight: 600;
 }
