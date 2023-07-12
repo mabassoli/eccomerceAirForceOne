@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
+import { Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const CartWidget = () => {
 	return (
-		<a href="" className="cart">
-			<ShoppingCartIcon></ShoppingCartIcon>
-			<span>1</span>
-		</a>
+		<>
+			<Link to="/checkout">
+				<Badge badgeContent={2} color="primary" className="cart">
+					<ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
+				</Badge>
+			</Link>
+		</>
 	);
 };
 
