@@ -1,20 +1,12 @@
-import { useState } from "react";
-import NavBar from "./components/layout/navBar/navBar";
-import ItemList from "./components/page/itemList/itemList";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
 
-const App = () => {
-	const [saludo, setSaludo] = useState("hola como estas");
-
-	const cambiarSaludo = (nuevoSaludo) => {
-		setSaludo(nuevoSaludo);
-	};
-
+function App() {
 	return (
-		<>
-			<NavBar></NavBar>
-			<ItemList saludo={saludo} cambiarSaludo={cambiarSaludo}></ItemList>
-		</>
+		<BrowserRouter>
+			<AppRouter />
+		</BrowserRouter>
 	);
-};
+}
 
 export default App;

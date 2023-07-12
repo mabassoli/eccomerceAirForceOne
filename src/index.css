@@ -4,8 +4,6 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Barlow", sans-serif;
-}
-
-body {
-	background-color: #f2f2f2;
+	text-decoration: none;
+	list-style: none;
 }

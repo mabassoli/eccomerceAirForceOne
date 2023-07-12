@@ -1,33 +1,31 @@
+import "../navBar/NavBar.css";
+import Logo from "../../../assets/Logo/Logo";
 import SearchIcon from "@mui/icons-material/Search";
-import "../navBar/navBar.css";
 import CartWidget from "../../common/cart/cartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 	return (
 		<div className="container-navbar">
 			<div className="container-max-width">
-				<img src="../src/assets/logo.svg" alt="logo air force one" />
+				<Link to="/" className="logo-brand">
+					<Logo />
+				</Link>
 				<div className="container-navbar__content">
 					<div className="container-navbar__content__items">
-						<ul>
-							<li>
-								<a href="#">Sobre Nosotros</a>
-							</li>
-							<li>
-								<a href="#">Modelos</a>
-							</li>
-							<li>
-								<a href="#">Contacto</a>
-							</li>
+						<ul className="categories">
+							<Link to="/all">Todos</Link>
+							<Link to="/category/man">Hombre</Link>
+							<Link to="/category/woman">Mujer</Link>
 						</ul>
 					</div>
 					<div className="searchBar">
 						<input type="search" placeholder="Buscar" />
 						<a href="">
-							<SearchIcon></SearchIcon>
+							<SearchIcon />
 						</a>
 					</div>
-					<CartWidget></CartWidget>
+					<CartWidget />
 				</div>
 			</div>
 		</div>
