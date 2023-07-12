@@ -1,16 +1,34 @@
 import { Typography } from "@mui/material";
+import { width } from "@mui/system";
 
 const Home = () => {
 	return (
-		<div>
+		<div
+			style={{
+				maxWidth: "1280px",
+				margin: "auto",
+				textAlign: "center",
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				flexWrap: "wrap",
+				gap: "40px",
+				padding: "40px",
+			}}
+		>
 			<Typography
-				color={"#A2A2A2"}
-				fontWeight={"600"}
-				fontSize={"1rem"}
-				style={{ textDecoration: "line-through" }}
+				color={"#FFCB74"}
+				fontWeight={"400"}
+				fontSize={"3rem"}
+				style={{}}
 			>
-				12345
+				Site Under Construction
 			</Typography>
+			<img
+				src="../../src/assets/UnderConstruction/under-construction.png"
+				alt="under construction image"
+				style={{ width: "100%", maxWidth: "700px" }}
+			/>
 		</div>
 	);
 };
