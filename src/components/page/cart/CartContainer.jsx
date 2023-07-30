@@ -1,37 +1,51 @@
-import { Typography } from "@mui/material";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const CartContainer = () => {
-	return (
-		<div>
-			<div
-				style={{
-					maxWidth: "1280px",
-					margin: "auto",
-					textAlign: "center",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					flexWrap: "wrap",
-					gap: "40px",
-					padding: "40px",
-				}}
-			>
-				<Typography
-					color={"#FFCB74"}
-					fontWeight={"400"}
-					fontSize={"3rem"}
-					style={{}}
-				>
-					Site Under Construction
-				</Typography>
-				<img
-					src="../../src/assets/UnderConstruction/cart.jpg"
-					alt="under construction image"
-					style={{ width: "100%", maxWidth: "700px" }}
-				/>
-			</div>
-		</div>
-	);
+  const { cart, clearCart, deleteById, getTotalPrice } =
+    useContext(CartContext);
+
+  let total = getTotalPrice();
+
+  const limpiar = () => {
+    Swal.fire({
+      title: "Estas a punto de vaciar el carrito, esta bien?",
+      showDenyButton: true,
+      confirmButtonText: "Si, vaciar!",
+      denyButtonText: `No, me confundí 😱`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("Carrito limpiado exitosamente", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("El carrito queda como estaba", "", "info");
+      }
+    });
+  };
+  return (
+    <div>
+      <h1>Carritoooo</h1>
+
+      {cart.map((elemento) => {
+        return (
+          <div key={elemento.id} style={{ border: "2px solid black" }}>
+            <h4>{elemento.title}</h4>
+            <h5>{elemento.price}</h5>
+            <h5>{elemento.quantity}</h5>
+            <button onClick={() => deleteById(elemento.id)}>eliminar</button>
+          </div>
+        );
+      })}
+
+      {cart.length > 0 && <button onClick={limpiar}>Limpiar carrito</button>}
+
+      <h2>El total es: {total}</h2>
+      <Link to="/checkout">Finalizar compra</Link>
+    </div>
+  );
 };
 
 export default CartContainer;

@@ -2,28 +2,37 @@ import { useState, useEffect } from "react";
 import { products } from "../../../productsMock";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
-	const [items, setItems] = useState([]);
-	const [error, setError] = useState({});
+  const [items, setItems] = useState([]);
+  const [error, setError] = useState({});
 
-	const { categoryName } = useParams();
+  const { categoryName } = useParams();
 
-	useEffect(() => {
-		let productsFiltrados = products.filter(
-			(elemento) => elemento.category === categoryName
-		);
-		const tarea = new Promise((resolve, reject) => {
-			resolve(categoryName === undefined ? products : productsFiltrados);
-			//   reject({message: "No autorizado", status: 401})
-		});
+  useEffect(() => {
+    let productsCollection = collection(db, "products");
+    let consulta;
+    if (categoryName) {
+      consulta = query(
+        productsCollection,
+        where("category", "==", categoryName)
+      );
+    } else {
+      consulta = productsCollection;
+    }
 
-		tarea
-			.then((respuesta) => setItems(respuesta))
-			.catch((error) => setError(error));
-	}, [categoryName]);
+    getDocs(consulta).then((res) => {
+      let productos = res.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
 
-	return <ItemList items={items} />;
+      setItems(productos);
+    });
+  }, [categoryName]);
+
+  return <ItemList items={items} />;
 };
 
 export default ItemListContainer;

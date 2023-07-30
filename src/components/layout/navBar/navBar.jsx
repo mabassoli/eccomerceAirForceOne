@@ -5,6 +5,7 @@ import CartWidget from "../../common/cart/cartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+	let userRol = "admin";
 	return (
 		<div className="container-navbar">
 			<div className="container-max-width">
@@ -26,6 +27,7 @@ const NavBar = () => {
 						</a>
 					</div>
 					<CartWidget />
+					{userRol === "admin" && <Link className="" to="dashboard">ADMIN</Link>}
 				</div>
 			</div>
 		</div>

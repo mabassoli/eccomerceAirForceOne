@@ -3,6 +3,8 @@ import CheckoutContainer from "../components/page/checkout/CheckoutContainer";
 import ItemDetail from "../components/page/itemDetail/ItemDetail";
 import ItemListContainer from "../components/page/itemList/ItemListContainer";
 import Home from "../components/page/home/Home";
+import FormularioFormik from "../components/page/formularioFormik/FormularioFormik";
+import Dashboard from "../components/page/dashboard/Dashboard";
 
 export const routes = [
 	{
@@ -35,4 +37,9 @@ export const routes = [
 		path: "/checkout",
 		Element: CheckoutContainer,
 	},
+	{
+		id: "formik",
+		path: "/formik",
+		Element: FormularioFormik,
+	}
 ];
