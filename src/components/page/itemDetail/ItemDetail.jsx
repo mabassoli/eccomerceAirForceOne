@@ -59,6 +59,8 @@ const ItemDetail = () => {
           />
         )}
 
+      {<h2>Tienes agregado {totalQuantity} productos en el carrito</h2>}
+
       {producto.stock === 0 && <h2>No hay stock</h2>}
 
       {typeof totalQuantity !== "undefined" &&
@@ -67,7 +69,7 @@ const ItemDetail = () => {
 				<h2>No podes agregar más zapas al carrito porque no hay más en stock</h2>
 				<div>
 					<p>Dejanos tu email y te avisamos cuando haya stock nuevamente</p>
-					<input type="text" />
+					<input type="email" />
 				</div>
 			</>
         )}
