@@ -1,0 +1,38 @@
+.CardDetails {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .CardDetails {
+        flex-direction: column;
+    }
+}
+
+.CardDetailsItems {
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.CardDetailsItems h2 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.CardDetailsItems h3 {
+    margin-bottom: 10px;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.botonesDetalles {
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    background-color: rgb(255, 203, 116);
+    border: none;
+    cursor: pointer;
+}

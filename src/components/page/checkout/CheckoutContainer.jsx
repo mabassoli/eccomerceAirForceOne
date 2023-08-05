@@ -9,6 +9,7 @@ import {
   doc,
 } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import "./CheckoutContainer.css"
 
 const CheckoutContainer = () => {
   const [orderId, setOrderId] = useState("");
@@ -50,40 +51,47 @@ const CheckoutContainer = () => {
   };
 
   return (
-    <div>
-      <h1>Checkout</h1>
+		<div className="CheckoutContainer">
+			<h1>Checkout</h1>
 
-      {orderId ? (
-        <div>
-          <h3>Gracias por su compra.</h3>
-          <h4>Su numero de compra es: {orderId}</h4>
-          <Link to="/">Volver a comprar</Link>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Ingrese su nombre"
-            name="name"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Ingrese su telefono"
-            name="phone"
-            onChange={handleChange}
-          />
-          <input
-            type="email"
-            placeholder="Ingrese su email"
-            name="email"
-            onChange={handleChange}
-          />
-          <button type="submit">Comprar</button>
-        </form>
-      )}
-    </div>
-  );
+			{orderId ? (
+				<div>
+					<h3>Gracias por su compra.</h3>
+					<h4>Su numero de compra es: {orderId}</h4>
+					<Link to="/">Volver a comprar</Link>
+				</div>
+			) : (
+				<div className="CheckoutContainerItems">
+					<form onSubmit={handleSubmit}>
+						<input
+							className="inputsForm"
+							type="text"
+							placeholder="Ingrese su nombre"
+							name="name"
+							onChange={handleChange}
+						/>
+						<input
+							className="inputsForm"
+							type="text"
+							placeholder="Ingrese su telefono"
+							name="phone"
+							onChange={handleChange}
+						/>
+						<input
+							className="inputsForm"
+							type="email"
+							placeholder="Ingrese su email"
+							name="email"
+							onChange={handleChange}
+						/>
+						<button className="botonComprarCheckout" type="submit">
+							Comprar
+						</button>
+					</form>
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default CheckoutContainer;

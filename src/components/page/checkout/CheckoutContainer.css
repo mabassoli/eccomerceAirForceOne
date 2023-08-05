@@ -1,0 +1,23 @@
+.CheckoutContainer {
+    margin: 20px;
+}
+
+.inputsForm {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 203, 116);
+    padding: 10px;
+    margin: 20px 20px 20px 0;
+}
+
+.botonComprarCheckout {
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    background-color: rgb(255, 203, 116);
+    border: none;
+    cursor: pointer;
+}

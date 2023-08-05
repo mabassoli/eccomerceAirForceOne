@@ -2,19 +2,19 @@ import CartContainer from "../components/page/cart/CartContainer";
 import CheckoutContainer from "../components/page/checkout/CheckoutContainer";
 import ItemDetail from "../components/page/itemDetail/ItemDetail";
 import ItemListContainer from "../components/page/itemList/ItemListContainer";
-import Home from "../components/page/home/Home";
 import FormularioFormik from "../components/page/formularioFormik/FormularioFormik";
-import Dashboard from "../components/page/dashboard/Dashboard";
+// import Home from "../components/page/home/Home";
+// import Dashboard from "../components/page/dashboard/Dashboard";
 
 export const routes = [
-	{
-		id: "home",
-		path: "/",
-		Element: Home,
-	},
+	// {
+	// 	id: "home",
+	// 	path: "/",
+	// 	Element: Home,
+	// },
 	{
 		id: "all",
-		path: "/all",
+		path: "/",
 		Element: ItemListContainer,
 	},
 	{

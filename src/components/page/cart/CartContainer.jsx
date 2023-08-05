@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import "./CartContainer.css"
 
 const CartContainer = () => {
 	const { cart, clearCart, deleteById, getTotalPrice } =
@@ -25,25 +26,43 @@ const CartContainer = () => {
 		});
 	};
 	return (
-		<div>
-			<h1>Carritoooo</h1>
+		<>		
+			<div className="cartContainer">
 
-			{cart.map((elemento) => {
-				return (
-					<div key={elemento.id} style={{ border: "2px solid black" }}>
-						<h4>{elemento.title}</h4>
-						<h5>{elemento.price}</h5>
-						<h5>{elemento.quantity}</h5>
-						<button onClick={() => deleteById(elemento.id)}>eliminar</button>
-					</div>
-				);
-			})}
-
-			{cart.length > 0 && <button onClick={limpiar}>Limpiar carrito</button>}
-
-			<h2>El total es: {total}</h2>
-			<Link to="/checkout">Finalizar compra</Link>
-		</div>
+				{cart.map((elemento) => {
+					return (
+						<div key={elemento.id} className="cartContainerItems">
+							<div>
+								<h1>{elemento.title}</h1>
+								<h2>{elemento.price}</h2>
+								<h3>
+									Cantidad de elementos de este producto: {elemento.quantity}
+								</h3>
+								<button
+									className="botonEliminarProductoSeleccionado"
+									onClick={() => deleteById(elemento.id)}
+								>
+									Eliminar Producto
+								</button>
+								{cart.length > 0 && (
+									<button
+										className="botonEliminarProductosCarrito"
+										onClick={limpiar}
+									>
+										Vaciar carrito
+									</button>
+								)}
+							</div>
+							<img src={elemento.img} alt="" />
+						</div>
+					);
+				})}
+			</div>
+			<div className="totales">
+				<h2>El total es: {total}</h2>
+				<Link className="finalizarCompra" to="/checkout">Finalizar compra</Link>
+			</div>
+		</>
 	);
 };
 

@@ -1,0 +1,10 @@
+.productCardContainerImgs {
+    width: 500px;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .productCardContainerImgs {
+        width: 100%;
+    }
+}

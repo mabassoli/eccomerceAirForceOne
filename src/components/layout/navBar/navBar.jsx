@@ -5,7 +5,7 @@ import CartWidget from "../../common/cart/cartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-	let userRol = "admin";
+	// let userRol = "admin";
 	return (
 		<div className="container-navbar">
 			<div className="container-max-width">
@@ -15,7 +15,7 @@ const NavBar = () => {
 				<div className="container-navbar__content">
 					<div className="container-navbar__content__items">
 						<ul className="categories">
-							<Link to="/all">Todos</Link>
+							<Link to="/">Todos</Link>
 							<Link to="/category/man">Hombre</Link>
 							<Link to="/category/woman">Mujer</Link>
 						</ul>
@@ -27,7 +27,7 @@ const NavBar = () => {
 						</a>
 					</div>
 					<CartWidget />
-					{userRol === "admin" && <Link className="" to="dashboard">ADMIN</Link>}
+					{/* {userRol === "admin" && <Link className="" to="dashboard">ADMIN</Link>} */}
 				</div>
 			</div>
 		</div>
