@@ -38,18 +38,17 @@ const CartContextComponent = ({ children }) => {
 	};
 
 	const getTotalPrice = () => {
-    let totalPrice = cart.reduce((acc, elemento) => {
-      return acc + (elemento.price * elemento.quantity);
-		}, 0);
-    console.log(totalPrice);
-		return totalPrice;
+    let total = cart.reduce((acc, elemento) => {
+      return acc + (elemento.price * elemento.quantity)
+		}, 0)
+		return total;
 	};
 
 	const getTotalQuantity = () => {
-		let totalQuantity = cart.reduce((acc, elemento) => {
-			return acc + elemento.quantity;
-		}, 0);
-		return totalQuantity;
+		let total = cart.reduce((acc, elemento) => {
+			return acc + elemento.quantity
+		}, 0)
+		return total;
 	};
 
 	const getQuantityById = (id) => {

@@ -56,7 +56,7 @@ const CheckoutContainer = () => {
       {orderId ? (
         <div>
           <h3>Gracias por su compra.</h3>
-          <h4>Su numero de comprar es: {orderId}</h4>
+          <h4>Su numero de compra es: {orderId}</h4>
           <Link to="/">Volver a comprar</Link>
         </div>
       ) : (

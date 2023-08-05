@@ -7,7 +7,7 @@ const CartContainer = () => {
 	const { cart, clearCart, deleteById, getTotalPrice } =
 		useContext(CartContext);
 
-	let totalPrice = getTotalPrice();
+	let total = getTotalPrice();
 
 	const limpiar = () => {
 		Swal.fire({
@@ -41,7 +41,7 @@ const CartContainer = () => {
 
 			{cart.length > 0 && <button onClick={limpiar}>Limpiar carrito</button>}
 
-			<h2>El total es: {totalPrice}</h2>
+			<h2>El total es: {total}</h2>
 			<Link to="/checkout">Finalizar compra</Link>
 		</div>
 	);

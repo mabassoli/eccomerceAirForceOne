@@ -1,6 +1,5 @@
 export let products = [
 	{
-		id: 1,
 		title: "Nike Air Force 1 '07",
 		legend: "",
 		price: "$ 66.999",
@@ -10,7 +9,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/155418-1000-1000?v=1775506349&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 2,
 		title: "Nike Air Force 1 '07 LV8",
 		legend: "",
 		price: "$ 74.999",
@@ -20,7 +18,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/531575-1000-1000?v=1775499764&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 3,
 		title: "Nike Air Force 1 '07 LX",
 		legend: "",
 		price: "$ 82.999",
@@ -30,7 +27,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/531625-1000-1000?v=1775499760&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 4,
 		title: "Nike Air Force 1 React",
 		legend: "",
 		price: "$ 82.999",
@@ -40,7 +36,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/600625-1000-1000?v=1775500151&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 5,
 		title: "Nike Air Force 1 '07 LV8",
 		legend: "",
 		price: "$ 74.999",
@@ -50,7 +45,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/531712-1000-1000?v=1775500173&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 6,
 		title: "Nike Air Force 1 '07 Next Nature",
 		legend: "",
 		price: "$ 66.999",
@@ -60,7 +54,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/498793-1000-1000?v=1775504324&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 7,
 		title: "Nike Air Force 1 Shadow",
 		legend: "Lo Nuevo",
 		price: "$ 74.999",
@@ -72,7 +65,6 @@ export let products = [
 			"https://nikearprod.vtexassets.com/arquivos/ids/700471-1200-1200?v=638229734252330000&width=1200&height=1200&aspect=true",
 	},
 	{
-		id: 8,
 		title: "Nike Air Force 1 Shadow",
 		legend: "",
 		price: "$ 82.999",
@@ -82,7 +74,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/455481-1000-1000?v=1775500156&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 9,
 		title: "Nike Air Force 1 Fontanka",
 		legend: "",
 		price: "$ 74.999",
@@ -92,7 +83,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/699310-1000-1000?v=1775500144&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 10,
 		title: "Nike Air Force 1 '07",
 		legend: "",
 		price: "$ 59.999",
@@ -102,7 +92,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/596991-1000-1000?v=1775500157&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 11,
 		title: "Nike AF1 Shadow",
 		legend: "",
 		price: "$ 82.999",
@@ -112,7 +101,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/531379-1000-1000?v=1775403677&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 12,
 		title: "Nike AF1 PLT.AF.ORM LV8",
 		legend: "",
 		price: "$ 74.999",
@@ -122,7 +110,6 @@ export let products = [
 		img: "https://nikearprod.vtexassets.com/arquivos/ids/628688-1000-1000?v=1775403693&width=1000&height=1000&aspect=true",
 	},
 	{
-		id: 13,
 		title: "Nike AF1 PLT.AF.ORM",
 		legend: "Hasta 10%",
 		price: "$ 60.199",

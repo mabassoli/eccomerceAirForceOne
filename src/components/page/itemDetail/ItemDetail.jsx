@@ -59,7 +59,7 @@ const ItemDetail = () => {
           />
         )}
 
-      {<h2>Tienes agregado {totalQuantity} productos en el carrito</h2>}
+      <h2>Tienes agregado {totalQuantity} productos en el carrito</h2>
 
       {producto.stock === 0 && <h2>No hay stock</h2>}
 

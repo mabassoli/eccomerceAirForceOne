@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAuIJr0P7R5R1CfJrJq5krVhyvTWnqIWR8",
-    authDomain: "airforceone-fb98e.firebaseapp.com",
-    projectId: "airforceone-fb98e",
-    storageBucket: "airforceone-fb98e.appspot.com",
-    messagingSenderId: "38527419444",
-    appId: "1:38527419444:web:bb2e4f58d6953faa78f661"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING,
+    appId: import.meta.env.VITE_APPID
 };
 
 const app = initializeApp(firebaseConfig);
