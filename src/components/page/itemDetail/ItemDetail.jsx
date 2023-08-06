@@ -44,7 +44,7 @@ const ItemDetail = () => {
   };
 
   return (
-		<Card sx={{ width: "100%" }} style={{ padding: "20px" }}>
+		<div className="CardDetailsContainer">
 			<div className="CardDetails">
 				<div className="CardDetailsItems">
 					<h2>{producto.legend}</h2>
@@ -55,14 +55,15 @@ const ItemDetail = () => {
 					{(typeof totalQuantity === "undefined" ||
 						producto.stock > totalQuantity) &&
 						producto.stock > 0 && (
-							<CounterContainer
-								stock={producto.stock}
-								onAdd={onAdd}
-								initial={totalQuantity}
-							/>
+							<>
+								<CounterContainer
+									stock={producto.stock}
+									onAdd={onAdd}
+									initial={totalQuantity}
+								/>
+								<h2>Tienes agregado {totalQuantity} productos en el carrito</h2>
+							</>
 						)}
-
-					<h2>Tienes agregado {totalQuantity} productos en el carrito</h2>
 
 					{producto.stock === 0 && <h2>No hay stock</h2>}
 				</div>
@@ -84,7 +85,7 @@ const ItemDetail = () => {
 				)}
 
 			<ToastContainer />
-		</Card>
+		</div>
 	);
 };
 

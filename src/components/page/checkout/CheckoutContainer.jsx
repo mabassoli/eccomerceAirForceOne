@@ -2,63 +2,64 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import {
-  addDoc,
-  collection,
-  serverTimestamp,
-  updateDoc,
-  doc,
+	addDoc,
+	collection,
+	serverTimestamp,
+	updateDoc,
+	doc,
 } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import "./CheckoutContainer.css"
+import "./CheckoutContainer.css";
 
 const CheckoutContainer = () => {
-  const [orderId, setOrderId] = useState("");
+	const [orderId, setOrderId] = useState("");
 
-  const { cart, getTotalPrice } = useContext(CartContext);
+	const { cart, getTotalPrice } = useContext(CartContext);
 
-  const [data, setData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-  });
+	const [data, setData] = useState({
+		name: "",
+		phone: "",
+		email: "",
+	});
 
-  let total = getTotalPrice();
+	let total = getTotalPrice();
 
-  const handleSubmit = (evento) => {
-    evento.preventDefault();
+	const handleSubmit = (evento) => {
+		evento.preventDefault();
 
-    let order = {
-      buyer: data,
-      items: cart,
-      total,
-      date: serverTimestamp(),
-    };
+		let order = {
+			buyer: data,
+			items: cart,
+			total,
+			date: serverTimestamp(),
+		};
 
-    // CREAR LA ORDEN EN FIREBASE
-    const ordersCollection = collection(db, "orders");
-    addDoc(ordersCollection, order).then((res) => setOrderId(res.id));
+		// CREAR LA ORDEN EN FIREBASE
+		const ordersCollection = collection(db, "orders");
+		addDoc(ordersCollection, order).then((res) => setOrderId(res.id));
 
-    // MODIFICAR EL STOCK EN FIREBASE DE CADA DOCUMENTO
-    cart.forEach((product) => {
-      updateDoc(doc(db, "products", product.id), {
-        stock: product.stock - product.quantity,
-      });
-    });
-  };
+		// MODIFICAR EL STOCK EN FIREBASE DE CADA DOCUMENTO
+		cart.forEach((product) => {
+			updateDoc(doc(db, "products", product.id), {
+				stock: product.stock - product.quantity,
+			});
+		});
+	};
 
-  const handleChange = (evento) => {
-    setData({ ...data, [evento.target.name]: evento.target.value });
-  };
+	const handleChange = (evento) => {
+		setData({ ...data, [evento.target.name]: evento.target.value });
+	};
 
-  return (
+	return (
 		<div className="CheckoutContainer">
 			<h1>Checkout</h1>
+			<h3>Por favor completá estos campos asi podemos contactarte ante cualquier eventualidad con tu pedido</h3>
 
 			{orderId ? (
 				<div>
 					<h3>Gracias por su compra.</h3>
-					<h4>Su numero de compra es: {orderId}</h4>
-					<Link to="/">Volver a comprar</Link>
+					<h2>Su numero de compra es: {orderId}</h2>
+					<Link className="volverAcomprar" to="/">Volver a comprar</Link>
 				</div>
 			) : (
 				<div className="CheckoutContainerItems">

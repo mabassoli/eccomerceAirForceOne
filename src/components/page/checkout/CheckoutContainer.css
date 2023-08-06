@@ -2,6 +2,14 @@
     margin: 20px;
 }
 
+.CheckoutContainer h1 {
+    margin-bottom: 20px;
+}
+
+.CheckoutContainer h2 {
+    margin-bottom: 20px;
+}
+
 .inputsForm {
     width: 200px;
     height: 40px;
@@ -12,6 +20,17 @@
 }
 
 .botonComprarCheckout {
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    background-color: rgb(255, 203, 116);
+    border: none;
+    cursor: pointer;
+}
+
+.volverAcomprar {
     font-size: 20px;
     border-radius: 10px;
     color: black;

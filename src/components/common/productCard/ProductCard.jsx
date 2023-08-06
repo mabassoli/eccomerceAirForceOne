@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./ProductCard.css"
+import "./ProductCard.css";
 
 const ProductCard = ({ elemento, isInItemList = true }) => {
   return (
